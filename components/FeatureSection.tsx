@@ -12,7 +12,7 @@ export default function FeatureSection() {
   }
 
   return (
-    <section className="min-h-screen flex flex-col items-center justify-center px-6">
+    <section className="min-h-screen flex flex-col items-center justify-center px-6 bg-gradient-to-br from-slate-50 to-blue-100">
 
       <motion.h2
         initial={{ opacity: 0, y: 40 }}
@@ -27,30 +27,36 @@ export default function FeatureSection() {
         initial={{ opacity: 0, scale: 0.8 }}
         whileInView={{ opacity: 1, scale: 1 }}
         transition={{ type: "spring", stiffness: 80 }}
-        className="bg-white shadow-xl p-8 rounded-xl max-w-md w-full"
+        className="bg-white shadow-2xl p-8 rounded-2xl max-w-md w-full border border-gray-100"
       >
 
-        {data?.map((item: any) => (
-          <div key={item.name} className="mb-4">
+        {data?.map((item: any, i: number) => (
 
-            <div className="flex justify-between text-sm">
-              <span>{item.name}</span>
-              <span>{item.usage}%</span>
-            </div>
+  <motion.div
+    key={i}
+    className="mb-4"
+    initial={{ opacity: 0, y: 10 }}
+    animate={{ opacity: 1, y: 0 }}
+    transition={{ delay: i * 0.2 }}
+  >
 
-            <div className="h-2 bg-gray-200 rounded">
+    <div className="flex justify-between text-sm">
+      <span>{item.label}</span>
+      <span>{item.value}%</span>
+    </div>
 
-              <motion.div
-                className="h-2 bg-green-500 rounded"
-                initial={{ width: 0 }}
-                whileInView={{ width: `${item.usage}%` }}
-                transition={{ duration: 1 }}
-              />
+    <div className="w-full bg-gray-200 rounded h-3 mt-2 overflow-hidden">
+      <motion.div
+        className="bg-emerald-500 h-3 rounded"
+        initial={{ width: 0 }}
+        animate={{ width: `${item.value}%` }}
+        transition={{ duration: 1 }}
+      />
+    </div>
 
-            </div>
+  </motion.div>
 
-          </div>
-        ))}
+))}
 
       </motion.div>
 
@@ -58,21 +64,21 @@ export default function FeatureSection() {
 
         <motion.div
           whileHover={{ scale: 1.1 }}
-          className="bg-white shadow-md px-4 py-2 rounded-lg"
+          className="bg-white shadow-md px-4 py-2 rounded-lg cursor-pointer hover:scale-110 transition"
         >
           AWS
         </motion.div>
 
         <motion.div
           whileHover={{ scale: 1.1 }}
-          className="bg-white shadow-md px-4 py-2 rounded-lg"
+          className="bg-white shadow-md px-4 py-2 rounded-lg cursor-pointer hover:scale-110 transition"
         >
           Azure
         </motion.div>
 
         <motion.div
           whileHover={{ scale: 1.1 }}
-          className="bg-white shadow-md px-4 py-2 rounded-lg"
+          className="bg-white shadow-md px-4 py-2 rounded-lg cursor-pointer hover:scale-110 transition"
         >
           GCP
         </motion.div>
