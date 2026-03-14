@@ -48,7 +48,7 @@ The project is structured using reusable components to maintain clean and mainta
 ## Project Structure
 
 ```
-my-nextjs-project
+multi-cloud-infrastructure
 │
 ├── app
 │   ├── layout.tsx
@@ -72,13 +72,13 @@ my-nextjs-project
 1. Clone the repository
 
 ```
-git clone https://github.com/gnanithaa23/my-nextjs-project.git
+git clone https://github.com/gnanithaa23/multi-cloud-infrastructure-dashboard.git
 ```
 
 2. Navigate into the project directory
 
 ```
-cd my-nextjs-project
+cd multi-cloud-infrastructure-dashboard
 ```
 
 3. Install project dependencies
@@ -115,12 +115,12 @@ The project was developed with the following approach:
 ## Repository
 
 GitHub Repository
-https://github.com/gnanithaa23/my-nextjs-project
+https://github.com/gnanithaa23/multi-cloud-infrastructure-dashboard
 
 ---
 
 ## Notes
 
 This project was completed as part of the **Atomity Frontend Engineering Internship Technical Challenge**.
-# my-nextjs-project
+# multi-cloud-infrastructure-dashboard
 Frontend project built using Next.js
