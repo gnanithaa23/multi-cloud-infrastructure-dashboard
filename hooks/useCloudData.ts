@@ -1,11 +1,23 @@
 import { useQuery } from "@tanstack/react-query"
 
 export function useCloudData() {
-  const data = [
-    { name: "Compute Services", usage: 72 },
-    { name: "Storage Systems", usage: 55 },
-    { name: "AI Processing", usage: 83 }
-  ]
+  return useQuery({
+    queryKey: ["cloudData"],
+    queryFn: async () => {
+      const res = await fetch("https://dummyjson.com/products?limit=4")
+      const data = await res.json()
 
-  return { data, isLoading: false }
+      const labels = [
+        "Compute Services",
+        "Storage Systems",
+        "AI Processing",
+        "Cloud Networking"
+      ]
+
+      return data.products.map((p: any, i: number) => ({
+        label: labels[i],
+        value: Math.round(p.rating * 20)
+      }))
+    }
+  })
 }
