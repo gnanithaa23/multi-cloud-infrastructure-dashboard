@@ -1,8 +1,9 @@
-# Atomity Frontend Engineering Challenge
+# Optimize Multi-Cloud Infrastructure – Frontend Challenge
 
-## Overview
 Live Demo:  
 https://my-nextjs-project-sable.vercel.app/
+
+## Overview
 
 This project is my implementation of the **Frontend Engineering Technical Challenge** provided by Atomity.
 
